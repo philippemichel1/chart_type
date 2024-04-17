@@ -8,7 +8,7 @@
 import SwiftUI
 import Charts
 
-struct GraphBarMark: View {
+struct GraphBar: View {
     @State private var  selection = 0
     var marks:[String] = ["Bar","Line", "Point", "Area", "Rect" ]
     private var listCities:ListData = ListData()
@@ -31,11 +31,11 @@ struct GraphBarMark: View {
                             .foregroundStyle(.yellow)
                             .opacity(0.6)
                             .cornerRadius(10)
-                            .annotation(position:.overlay) {
-                                Text(String(myCity.hour))
-                                    .font(.caption)
-                                    .foregroundStyle(.red)
-                            }
+//                            .annotation(position:.overlay) {
+//                                Text(String(myCity.hour))
+//                                    .font(.caption)
+//                                    .foregroundStyle(.red)
+//                            }
                         
                     case 2: PointMark(x:.value("Villes", myCity.city), y:.value("Heures", myCity.hour))
                             .foregroundStyle(.yellow)
@@ -51,11 +51,11 @@ struct GraphBarMark: View {
                             .foregroundStyle(.yellow)
                             .opacity(0.6)
                             .cornerRadius(10)
-                            .annotation(position:.overlay) {
-                                Text(String(myCity.hour))
-                                    .font(.caption)
-                                    .foregroundStyle(.red)
-                            }
+//                            .annotation(position:.overlay) {
+//                                Text(String(myCity.hour))
+//                                    .font(.caption)
+//                                    .foregroundStyle(.red)
+//                            }
                         
                     case 4: RectangleMark(x:.value("Villes", myCity.city), y:.value("Heures", myCity.hour))
                             .foregroundStyle(.yellow)
@@ -95,5 +95,5 @@ struct GraphBarMark: View {
 
 
 #Preview {
-    GraphBarMark()
+    GraphBar()
 }

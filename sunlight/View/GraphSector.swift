@@ -8,9 +8,9 @@
 import SwiftUI
 import Charts
 
-struct GraphSectorMarkOne: View {
+struct GraphSector: View {
     @State private var  selection = 0
-    var sectors:[String] = ["E1", "E2", "E3"]
+    var sectors:[String] = ["Exemple 1", "Exemple 2", "Exemple 3"]
     private var listCities:ListData = ListData()
     
     var body: some View {
@@ -28,6 +28,7 @@ struct GraphSectorMarkOne: View {
             Chart {
                 ForEach(listCities.listOfCities(), id: \.id) { myCity in
                     switch selection {
+                        // exemple 1
                     case 1:SectorMark(angle: .value("Heures", myCity.hour),
                                       innerRadius: 50,
                                       angularInset: 2)
@@ -36,6 +37,7 @@ struct GraphSectorMarkOne: View {
                         Text(String(myCity.hour))
                             .font(.caption)
                     }
+                        // exemple 2
                     case 2: SectorMark(angle: .value("Heures", myCity.hour),
                                        innerRadius: 40,
                                        outerRadius: myCity.hour == 2740 ? 100 : 300,                           angularInset: 1.0)
@@ -47,7 +49,7 @@ struct GraphSectorMarkOne: View {
                         
                     }
                         
-                        
+                        // exemple 3
                     default:SectorMark(angle: .value("Heures", myCity.hour),
                                        angularInset: 2)
                     .foregroundStyle(by: .value("Villes", myCity.city))
@@ -59,10 +61,11 @@ struct GraphSectorMarkOne: View {
                 }
                 
             }.frame(width: 300,height: 300)
+                .chartLegend(position: .trailing)
         }
     }
 }
 
 #Preview {
-    GraphSectorMarkOne()
+    GraphSector()
 }

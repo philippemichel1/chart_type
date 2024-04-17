@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            VStack {
+                Text("Durée d’ensoleillement annuel en heures")
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.center)
+                ScrollView {
+                        GraphBar()
+                            .padding(10)
+                        GraphSector()
+            }
         }
         .padding()
     }
