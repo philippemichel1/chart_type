@@ -32,7 +32,7 @@ struct GraphSector: View {
                     case 1:SectorMark(angle: .value("Heures", myCity.hour),
                                       // rayon interieur
                                       innerRadius: 50,
-                                      // espacement rntre les secteur
+                                      // espacement entre les secteur
                                       angularInset: 2)
                     .foregroundStyle(by: .value("Villes", myCity.city))
                     .annotation(position:.overlay) {
@@ -44,7 +44,7 @@ struct GraphSector: View {
                                        // rayon interieur
                                        innerRadius: 40,
                                        // taille du sercteur
-                                       outerRadius: myCity.hour == 1665 ? 100 : 300,
+                                       outerRadius: myCity.hour == 1665 ? 90 : 300,
                                        // espacement rntre les secteur
                                        angularInset: 2.0)
                     .foregroundStyle(by: .value("Villes", myCity.city))
