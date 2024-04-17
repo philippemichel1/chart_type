@@ -28,19 +28,25 @@ struct GraphSector: View {
             Chart {
                 ForEach(listCities.listOfCities(), id: \.id) { myCity in
                     switch selection {
-                        // exemple 1
+                        // exemple 2
                     case 1:SectorMark(angle: .value("Heures", myCity.hour),
+                                      // rayon interieur
                                       innerRadius: 50,
+                                      // espacement rntre les secteur
                                       angularInset: 2)
                     .foregroundStyle(by: .value("Villes", myCity.city))
                     .annotation(position:.overlay) {
                         Text(String(myCity.hour))
                             .font(.caption)
                     }
-                        // exemple 2
+                        // exemple 3
                     case 2: SectorMark(angle: .value("Heures", myCity.hour),
+                                       // rayon interieur
                                        innerRadius: 40,
-                                       outerRadius: myCity.hour == 2740 ? 100 : 300,                           angularInset: 1.0)
+                                       // taille du sercteur
+                                       outerRadius: myCity.hour == 1665 ? 100 : 300,
+                                       // espacement rntre les secteur
+                                       angularInset: 2.0)
                     .foregroundStyle(by: .value("Villes", myCity.city))
                     .annotation(position:.overlay) {
                         
@@ -49,9 +55,9 @@ struct GraphSector: View {
                         
                     }
                         
-                        // exemple 3
+                        // exemple 1
                     default:SectorMark(angle: .value("Heures", myCity.hour),
-                                       angularInset: 2)
+                                       angularInset: 1)
                     .foregroundStyle(by: .value("Villes", myCity.city))
                     .annotation(position:.overlay) {
                         Text(String(myCity.hour))
